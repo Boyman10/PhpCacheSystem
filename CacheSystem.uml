@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<uml:Model xmi:version="20131001" xmlns:xmi="http://www.omg.org/spec/XMI/20131001" xmlns:uml="http://www.eclipse.org/uml2/5.0.0/UML" xmi:id="_oH6IkBQBEeitG5m-P9MDTQ" name="CacheSystem">
+  <ownedComment xmi:type="uml:Comment" xmi:id="_Otp0YBQEEeitG5m-P9MDTQ">
+    <body>Cache system&#xD;
+Once a user request a page, we check if there is a &#xD;
+cached version of the view or/and the Entity.&#xD;
+The application class will instantiate the Cache class to see what action can be done.&#xD;
+&#xD;
+If there is no cached view yet, then we launch the controller and save the view via the createCache method passing the html code in it.&#xD;
+We can define in the app.xml file the type of views to store and also which method we apply amont Entity or View.&#xD;
+&#xD;
+</body>
+  </ownedComment>
+  <packageImport xmi:type="uml:PackageImport" xmi:id="_oehRwBQBEeitG5m-P9MDTQ">
+    <importedPackage xmi:type="uml:Model" href="pathmap://UML_LIBRARIES/UMLPrimitiveTypes.library.uml#_0"/>
+  </packageImport>
+  <packagedElement xmi:type="uml:Class" xmi:id="_0ygy8BQBEeitG5m-P9MDTQ" name="Cache" isAbstract="true">
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_SXpEwBQCEeitG5m-P9MDTQ" name="timestamp"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_HiguQBQCEeitG5m-P9MDTQ" name="save"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_IhWVEBQCEeitG5m-P9MDTQ" name="retrieve"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_vAk0EBQCEeitG5m-P9MDTQ" name="EntityCache">
+    <generalization xmi:type="uml:Generalization" xmi:id="_0suekBQCEeitG5m-P9MDTQ" general="_0ygy8BQBEeitG5m-P9MDTQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_5nw1MBQCEeitG5m-P9MDTQ" name="Entity"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_APAO8BQDEeitG5m-P9MDTQ" name="save"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_BR2zEBQDEeitG5m-P9MDTQ" name="retrieve"/>
+  </packagedElement>
+  <packagedElement xmi:type="uml:Class" xmi:id="_wbcPkBQCEeitG5m-P9MDTQ" name="ViewCache">
+    <generalization xmi:type="uml:Generalization" xmi:id="_2AArYBQCEeitG5m-P9MDTQ" general="_0ygy8BQBEeitG5m-P9MDTQ"/>
+    <ownedAttribute xmi:type="uml:Property" xmi:id="_-dRLkBQCEeitG5m-P9MDTQ" name="html"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_CA5DUBQDEeitG5m-P9MDTQ" name="save"/>
+    <ownedOperation xmi:type="uml:Operation" xmi:id="_CsFVYBQDEeitG5m-P9MDTQ" name="retrieve"/>
+  </packagedElement>
+</uml:Model>
